@@ -1,0 +1,16 @@
+[package]
+name = "aml_eval"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "aml-eval"
+path = "src/main.rs"
+
+[dependencies]
+aml_engine = { path = "../aml_engine" }
+aml_datasets = { path = "../aml_datasets" }
+anyhow.workspace = true
+clap.workspace = true
+csv = "1"
+serde_json.workspace = true

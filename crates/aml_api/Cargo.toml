@@ -1,0 +1,31 @@
+[package]
+name = "aml_api"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "aml"
+path = "src/main.rs"
+
+[dependencies]
+aml_engine = { path = "../aml_engine" }
+aml_datasets = { path = "../aml_datasets" }
+aml_entity = { path = "../aml_entity" }
+aml_feedback = { path = "../aml_feedback" }
+aml_agent = { path = "../aml_agent" }
+aml_graph = { path = "../aml_graph" }
+aml_migration = { path = "../aml_migration" }
+anyhow.workspace = true
+axum = "0.8"
+chrono.workspace = true
+clap.workspace = true
+csv = "1"
+futures-util = "0.3"
+sea-orm.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tower-http = { version = "0.6", features = ["trace", "cors"] }
+tracing.workspace = true
+tracing-subscriber.workspace = true

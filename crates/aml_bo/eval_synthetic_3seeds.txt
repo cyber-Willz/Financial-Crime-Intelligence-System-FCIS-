@@ -1,0 +1,28 @@
+SYNTHETIC world (own generator, not real data): 113334 txns, 2251 laundering (1.99%), 2870 parties
+ownership summary: {"parties":2423,"entities":408,"with_accounts":2423,"opaque":23,"no_owner_identified":95,"circular":0,"fragmented":48,"sanctioned_owned":12,"exposed":0,"groups":266,"multi_account_groups":49,"groups_dropped_too_large":0}
+
+test period: last 39 windows, 27493 txns, 589 laundering; k = 6784 (the online rule engine's alert count)
+
+TEST                                           AP        ROC-AUC    precision@k       recall@k
+rule engine, online                         1.82%          0.501          0.81%          9.34%
+BO rules only                              16.95%          0.618          2.23%         25.64%
+rule engine + BO rules (noisy-OR)           7.04%          0.609          1.86%         21.39%
+model: graph (no ownership)          86.62 ±2.57           0.986    8.54 ±0.02    98.42 ±0.20 
+model: graph + ownership             85.25 ±4.03           0.984    8.53 ±0.10    98.25 ±1.20 
+model: graph + ownership + BO rules   85.47 ±3.88           0.985    8.14 ±0.08    98.64 ±1.02 
+model: placebo: shuffled ownership   84.70 ±0.69           0.983    8.49 ±0.06    97.79 ±0.68 
+(percent; AUC as a fraction; 3 seed(s), mean ± sd; for the +BO row the engine row above is the plain engine)
+
+recall by typology: rule engine / BO rules / engine+BO at their alert threshold (0.595); models at k = 6784
+typology                        n   engine       BO     both graph (no ow graph + owne graph + owne placebo: shu
+Fan_In_Structuring             39    59.0%     0.0%    59.0%       100.0%       100.0%       100.0%       100.0%
+Cycle                           8    25.0%     0.0%    25.0%        75.0%        79.2%        87.5%        79.2%
+Layered_Chain                  29    17.2%     3.4%    17.2%        79.3%        85.1%        87.4%        81.6%
+Slow_Drip                      29     0.0%     0.0%     0.0%        98.9%        97.7%        97.7%        83.9%
+Dormant_Pass_Through           14     0.0%     0.0%     0.0%        92.9%        90.5%        95.2%        92.9%
+Bipartite_Mesh                271     1.1%     0.0%     1.1%       100.0%        99.3%        99.4%       100.0%
+Behaviour_Ramp                 23     0.0%     0.0%     0.0%       100.0%        98.6%        98.6%        98.6%
+Shell_Group_Layering           26    15.4%    65.4%    69.2%       100.0%       100.0%       100.0%       100.0%
+Sanctioned_Owner_Evasion       13    23.1%   100.0%   100.0%       100.0%       100.0%       100.0%       100.0%
+Nominee_Pass_Through           64    23.4%    68.8%    76.6%       100.0%       100.0%       100.0%       100.0%
+Split_Stake_Structuring        73     0.0%    76.7%    76.7%       100.0%       100.0%       100.0%       100.0%

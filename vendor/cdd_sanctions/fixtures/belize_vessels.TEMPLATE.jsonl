@@ -1,0 +1,4 @@
+# The FIU publishes designated vessels only as a PDF (designated_vessels_list.pdf), not in the XML.
+# Transcribe them here, one JSON object per line, then:  cddctl --state S load-list BZ-FIU-VESSELS jsonl FILE
+# Replace the placeholder below; it is NOT a real designation.
+{"list":"BZ-FIU-VESSELS","uid":"VESSEL-EXAMPLE-1","kind":"vessel","names":[{"name":"EXAMPLE VESSEL NAME","strength":"primary"}],"identifiers":[{"kind":"imo","value":"0000000"}],"programs":["BZ-VESSELS"]}

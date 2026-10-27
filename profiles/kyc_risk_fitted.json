@@ -1,0 +1,86 @@
+{
+  "_comment": "Calibrated on the first 70% (time-ordered) of the Synthetic KYC transactions with Rapid_Movement excluded (shown to be noise). WATCHLIST_HIT and SANCTIONED_JURISDICTION are protected and never tuned down. Load with POST /api/v1/rules/import (admin).",
+  "alert_threshold": 60,
+  "rules": {
+    "BEHAVIOUR_CHANGE": {
+      "enabled": true,
+      "weight": 0.166
+    },
+    "CASH_VELOCITY": {
+      "enabled": true,
+      "weight": 0.25
+    },
+    "CIRCULAR_FLOW": {
+      "enabled": true,
+      "weight": 0.8
+    },
+    "CURRENCY_CONVERSION": {
+      "enabled": true,
+      "weight": 0.05
+    },
+    "CUSTOMER_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.186
+    },
+    "DORMANT_REACTIVATION": {
+      "enabled": true,
+      "weight": 0.4
+    },
+    "FAN_IN": {
+      "enabled": true,
+      "weight": 0.5
+    },
+    "FAN_OUT": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "HIGH_RISK_CUSTOMER": {
+      "enabled": true,
+      "weight": 0.132
+    },
+    "HIGH_RISK_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "INCOME_MISMATCH": {
+      "enabled": true,
+      "weight": 0.3
+    },
+    "LARGE_TXN": {
+      "enabled": true,
+      "weight": 0.164
+    },
+    "LAYERING_CHAIN": {
+      "enabled": true,
+      "weight": 0.8
+    },
+    "PASS_THROUGH": {
+      "enabled": true,
+      "weight": 0.3
+    },
+    "REPEATED_PAIR": {
+      "enabled": true,
+      "weight": 0.45
+    },
+    "SANCTIONED_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.75
+    },
+    "STRUCTURING_BAND": {
+      "enabled": true,
+      "weight": 0.371
+    },
+    "STRUCTURING_HUB": {
+      "enabled": true,
+      "weight": 0.292
+    },
+    "TRADE_MISPRICING": {
+      "enabled": true,
+      "weight": 0.55
+    },
+    "WATCHLIST_HIT": {
+      "enabled": true,
+      "weight": 0.95
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "country_risk": {
+    "XX": 3,
+    "YY": 2,
+    "ZZ": 1
+  },
+  "default_country_risk": 0,
+  "complex_layers": 3,
+  "ubo_threshold": 0.25,
+  "sanctions_ownership_threshold": 0.5,
+  "tier_medium": 30,
+  "tier_high": 60,
+  "review_months_low": 36,
+  "review_months_medium": 24,
+  "review_months_high": 12,
+  "allow_simplified": true,
+  "network": {
+    "enabled": true,
+    "damping": 0.6,
+    "moderate_exposure": 0.001,
+    "strong_exposure": 0.01,
+    "confirmed_seed": 1.0,
+    "high_alert_seed": 0.3,
+    "review_alert_seed": 0.0,
+    "max_shared_identifier_group": 10,
+    "structure_max_size": 25000,
+    "home_dial_code": "501",
+    "links": {
+      "bank_account": {
+        "weight": 1.0,
+        "max_group": 6
+      },
+      "phone": {
+        "weight": 0.6,
+        "max_group": 6
+      },
+      "email": {
+        "weight": 0.6,
+        "max_group": 6
+      },
+      "address": {
+        "weight": 0.5,
+        "max_group": 5
+      },
+      "registered_agent": {
+        "weight": 0.3,
+        "max_group": 15
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+{"list":"DEMO","uid":"D1","kind":"individual","names":[{"name":"PETROV, Ivan Sergeyevich","strength":"primary"},{"name":"Vanya Petrof","strength":"strong"}],"dobs":[{"year":1965,"month":3,"day":12}],"nationalities":["Russia"],"identifiers":[{"kind":"passport","value":"75 1234567","country":"RU"}],"programs":["DEMO-PROG"]}
+{"list":"DEMO","uid":"D2","kind":"entity","names":[{"name":"NORTHERN STAR TRADING LLC","strength":"primary"}],"programs":["DEMO-PROG"]}

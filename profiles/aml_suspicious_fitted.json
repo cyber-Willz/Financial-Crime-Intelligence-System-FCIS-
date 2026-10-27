@@ -1,0 +1,86 @@
+{
+  "_comment": "Calibrated on the first 70% (time-ordered) of AML_Suspicious_Transactions.csv. Dataset-specific. Sanctions screens are protected and never tuned down. Load with POST /api/v1/rules/import (admin).",
+  "alert_threshold": 60,
+  "rules": {
+    "BEHAVIOUR_CHANGE": {
+      "enabled": true,
+      "weight": 0.129
+    },
+    "CASH_VELOCITY": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "CIRCULAR_FLOW": {
+      "enabled": true,
+      "weight": 0.8
+    },
+    "CURRENCY_CONVERSION": {
+      "enabled": true,
+      "weight": 0.05
+    },
+    "CUSTOMER_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.263
+    },
+    "DORMANT_REACTIVATION": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "FAN_IN": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "FAN_OUT": {
+      "enabled": true,
+      "weight": 0.35
+    },
+    "HIGH_RISK_CUSTOMER": {
+      "enabled": true,
+      "weight": 0.185
+    },
+    "HIGH_RISK_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "INCOME_MISMATCH": {
+      "enabled": true,
+      "weight": 0.3
+    },
+    "LARGE_TXN": {
+      "enabled": true,
+      "weight": 0.02
+    },
+    "LAYERING_CHAIN": {
+      "enabled": true,
+      "weight": 0.8
+    },
+    "PASS_THROUGH": {
+      "enabled": true,
+      "weight": 0.3
+    },
+    "REPEATED_PAIR": {
+      "enabled": true,
+      "weight": 0.45
+    },
+    "SANCTIONED_JURISDICTION": {
+      "enabled": true,
+      "weight": 0.75
+    },
+    "STRUCTURING_BAND": {
+      "enabled": true,
+      "weight": 0.3
+    },
+    "STRUCTURING_HUB": {
+      "enabled": true,
+      "weight": 0.65
+    },
+    "TRADE_MISPRICING": {
+      "enabled": true,
+      "weight": 0.55
+    },
+    "WATCHLIST_HIT": {
+      "enabled": true,
+      "weight": 0.95
+    }
+  }
+}

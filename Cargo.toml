@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = ["crates/aml_datasets", "crates/aml_engine", "crates/aml_eval", "crates/aml_entity", "crates/aml_migration", "crates/aml_api", "crates/aml_graph", "crates/aml_bo", "crates/aml_feedback", "crates/aml_agent"]
+# Vendored third-party-style crates (connectome RNN + spectral stack) are path dependencies, not workspace members.
+exclude = ["vendor/hcrnn", "vendor/krylov_ds", "vendor/spectral_hypergraph", "vendor/nbsc", "vendor/cdd_sanctions", "vendor/burn-llm", "llm_sidecar"]
+
+[workspace.package]
+version = "0.8.0"
+edition = "2021"
+license = "UNLICENSED"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "2"
+chrono = { version = "0.4", features = ["serde"] }
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+clap = { version = "4", features = ["derive", "env"] }
+rust_decimal = { version = "1", features = ["serde-float"] }
+sea-orm = { version = "1.1", default-features = false, features = ["sqlx-postgres", "runtime-tokio-rustls", "macros", "with-chrono", "with-json", "with-rust_decimal"] }
+sea-orm-migration = { version = "1.1", default-features = false, features = ["sqlx-postgres", "runtime-tokio-rustls", "cli"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4

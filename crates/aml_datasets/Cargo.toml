@@ -1,0 +1,9 @@
+[package]
+name = "aml_datasets"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aml_engine = { path = "../aml_engine" }
+anyhow.workspace = true
+csv = "1"

@@ -1,0 +1,27 @@
+[package]
+name = "aml_bo"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Beneficial ownership analysis for the AML system: UBO resolution, opacity, 50% rule and sanctions exposure from cdd_sanctions, ownership-aware transaction monitoring, and ownership features for the graph model"
+
+[lib]
+name = "aml_bo"
+path = "src/lib.rs"
+
+[[bin]]
+name = "aml-bo"
+path = "src/bin/aml_bo.rs"
+
+[dependencies]
+aml_engine = { path = "../aml_engine" }
+aml_datasets = { path = "../aml_datasets" }
+aml_graph = { path = "../aml_graph" }
+cdd_sanctions = { path = "../../vendor/cdd_sanctions" }
+hcrnn = { package = "human_connectome_rnn", path = "../../vendor/hcrnn" }
+anyhow.workspace = true
+chrono.workspace = true
+clap.workspace = true
+csv = "1"
+serde.workspace = true
+serde_json.workspace = true

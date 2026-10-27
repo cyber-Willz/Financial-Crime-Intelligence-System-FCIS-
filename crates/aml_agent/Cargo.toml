@@ -1,0 +1,21 @@
+[package]
+name = "aml_agent"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Bidirectional LLM analyst agent for the AML system: evidence packets, grounded explanations, typology identification, constrained graph queries, case prioritisation, rule suggestions and SAR drafting; optional local LLM through a burn-llm sidecar process"
+
+[lib]
+name = "aml_agent"
+path = "src/lib.rs"
+
+[dependencies]
+aml_feedback = { path = "../aml_feedback" }
+chrono.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[[bin]]
+name = "fake_llm"
+path = "src/bin/fake_llm.rs"
+test = false

@@ -1,0 +1,24 @@
+# Standalone workspace on purpose: Burn's dependency tree (indexmap >= 2.11, rustc >= 1.92) must not constrain the
+# main AML workspace. The AML API talks to this binary over stdin/stdout (see crates/aml_agent/src/llm.rs).
+[package]
+name = "aml_llm_sidecar"
+version = "0.6.0"
+edition = "2021"
+license = "MIT"
+description = "JSON-lines LLM server around burn-llm for the AML analyst agent"
+
+[workspace]
+
+[[bin]]
+name = "aml-llm-sidecar"
+path = "src/main.rs"
+
+[dependencies]
+burn-llm = { path = "../vendor/burn-llm" }
+burn-ndarray = "0.21"
+rand = "0.10"
+anyhow = "1"
+serde_json = "1"
+
+[profile.release]
+opt-level = 3

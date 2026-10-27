@@ -1,0 +1,17 @@
+[package]
+name = "aml_feedback"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Connectome memory feedback loop for the AML system: analyst decisions -> reinforcement signals -> rule-weight recommendations, threshold calibration, outcome memory and guarded graph-head fine-tuning"
+
+[lib]
+name = "aml_feedback"
+path = "src/lib.rs"
+
+[dependencies]
+aml_graph = { path = "../aml_graph" }
+hcrnn = { package = "human_connectome_rnn", path = "../../vendor/hcrnn" }
+serde.workspace = true
+serde_json.workspace = true
+aml_engine = { path = "../aml_engine" }
